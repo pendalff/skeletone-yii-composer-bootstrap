@@ -61,10 +61,11 @@
         },
 
         "yii-install-writable": [
-
+            "./assets",
+            "./protected/runtime"
         ],
         "yii-install-executable": [
-
+            "./protected/yiic"
         ]
     },
 
@@ -79,14 +80,16 @@
             "Trioris\\ComposerCallback::preInstall"
         ],
         "post-install-cmd": [
-            "Trioris\\ComposerCallback::postInstall"
+            "Trioris\\ComposerCallback::postInstall",
+            "Crisu83\\YiiComposer\\InstallHandler::setPermissions"
         ],
 
         "pre-update-cmd": [
             "Trioris\\ComposerCallback::preUpdate"
         ],
         "post-update-cmd": [
-            "Trioris\\ComposerCallback::postUpdate"
+            "Trioris\\ComposerCallback::postUpdate",
+            "Crisu83\\YiiComposer\\InstallHandler::setPermissions"
         ],
 
         "post-package-install":[
