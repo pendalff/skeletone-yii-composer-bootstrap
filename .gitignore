@@ -1,0 +1,10 @@
+### TMP
+_tmp
+### IDE
+.idea
+### Yii
+assets/*
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/data/*.db

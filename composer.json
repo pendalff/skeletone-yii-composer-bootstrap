@@ -1,0 +1,99 @@
+{
+    "name": "trioris/stat3",
+
+    "description": "Provide  statistic for some Trioris and here partners application events (so install,download,click and etc)",
+
+    "keywords": ["trioris","adstark","stat3"],
+
+    "license": "proprietary",
+
+    "type": "webapp",
+
+    "minimum-stability": "dev",
+
+    "authors": [
+        {
+            "name": "Fukalov Sem",
+            "email": "yapendalff@gmail.com"
+        }
+    ],
+
+    "support": {
+        "email": "yapendalff@gmail.com",
+        "skype": "yapendalff"
+    },
+
+    "config": {
+        "bin-dir":    "protected/commands/shell",
+        "vendor-dir": "protected/vendor"
+    },
+
+    "require": {
+        "php": ">=5.3.2",
+        "mihaildev/yiicomposer": "dev-master",
+        "yiisoft/yii": "1.1.15",
+        "crisu83/yii-composer": "dev-master",
+        "crisu83/yii-consoletools": "dev-master",
+        "schmunk42/database-command": "dev-master",
+        "yiiext/migrate-command": "dev-master",
+        "malyshev/yii-debug-toolbar": "dev-master",
+        "crisu83/yii-debug": "dev-master",
+        "crisu83/yiistrap": "dev-master",
+        "crisu83/yiistrap-widgets": "dev-master",
+        "crisu83/yii-auth": "dev-master"
+    },
+
+    "extra": {
+        "yiicomposer-paths":{
+            "module": "{vendor}/../modules/{name}",
+            "extension":"{vendor}/../extensions/{name}",
+            "framework": "{vendor}/../../yii",
+            "yiisoft/yii": "$framework$",
+
+            "crisu83/yiistrap": "$extension$",
+            "malyshev/yii-debug-toolbar": "$extension$",
+            "crisu83/yii-debug": "$extension$",
+            "schmunk42/database-command": "$extension$",
+            "crisu83/yii-consoletools": "$extension$",
+            "crisu83/yiistrap-widgets": "$extension$",
+
+            "crisu83/yii-auth": "$module$"
+        },
+
+        "yii-install-writable": [
+
+        ],
+        "yii-install-executable": [
+
+        ]
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Trioris": "./protected/vendor"
+        }
+    },
+
+    "scripts": {
+        "pre-install-cmd": [
+            "Trioris\\ComposerCallback::preInstall"
+        ],
+        "post-install-cmd": [
+            "Trioris\\ComposerCallback::postInstall"
+        ],
+
+        "pre-update-cmd": [
+            "Trioris\\ComposerCallback::preUpdate"
+        ],
+        "post-update-cmd": [
+            "Trioris\\ComposerCallback::postUpdate"
+        ],
+
+        "post-package-install":[
+            "Trioris\\ComposerCallback::postPackageInstall"
+        ],
+        "post-package-update":[
+            "Trioris\\ComposerCallback::postPackageUpdate"
+        ]
+    }
+}
